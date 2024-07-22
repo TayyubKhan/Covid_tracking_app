@@ -1,14 +1,16 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:covidapp/URLs/Models/allcasesmodel.dart';
 import 'package:covidapp/URLs/services/states_services.dart';
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:shimmer/shimmer.dart';
 
-class Countriesindlist extends StatelessWidget {
+class CountriesIndexList extends StatelessWidget {
   String countryname, iurl;
   int totalcases, recovered, deaths, activecases, criticalcases, Tests;
 
-  Countriesindlist({
+  CountriesIndexList({
     Key? key,
     required this.countryname,
     required this.totalcases,
@@ -40,7 +42,7 @@ class Countriesindlist extends StatelessWidget {
               Text(countryname.toString()),
             ],
           ),
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          backgroundColor: Colors.white54,
           elevation: 0,
         ),
         body: SafeArea(

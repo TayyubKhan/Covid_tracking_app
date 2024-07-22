@@ -3,14 +3,14 @@ import 'package:covidapp/View/countriesindlist.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-class countries_list extends StatefulWidget {
-  const countries_list({Key? key}) : super(key: key);
+class CountriesList extends StatefulWidget {
+  const CountriesList({Key? key}) : super(key: key);
 
   @override
-  State<countries_list> createState() => _countries_listState();
+  State<CountriesList> createState() => _CountriesListState();
 }
 
-class _countries_listState extends State<countries_list> {
+class _CountriesListState extends State<CountriesList> {
   TextEditingController searchcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -45,12 +45,12 @@ class _countries_listState extends State<countries_list> {
                     return Shimmer.fromColors(
                         baseColor: Colors.grey.shade700,
                         highlightColor: Colors.grey.shade100,
-                        child: Column(
+                        child: const Column(
                           children: [
                             Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(8.0),
                                 child: Column(
-                                  children: const [
+                                  children: [
                                     list_tile(),
                                     list_tile(),
                                     list_tile(),
@@ -76,7 +76,7 @@ class _countries_listState extends State<countries_list> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Countriesindlist(
+                                        builder: (context) => CountriesIndexList(
                                               countryname: snapshot.data![index]
                                                   ['country'],
                                               totalcases: snapshot.data![index]
@@ -129,7 +129,7 @@ class _countries_listState extends State<countries_list> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Countriesindlist(
+                                        builder: (context) => CountriesIndexList(
                                               countryname: snapshot.data![index]
                                                   ['country'],
                                               totalcases: snapshot.data![index]
@@ -182,7 +182,7 @@ class _countries_listState extends State<countries_list> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Countriesindlist(
+                                      builder: (context) => CountriesIndexList(
                                             countryname: snapshot.data![index]
                                                 ['country'],
                                             totalcases: snapshot.data![index]
